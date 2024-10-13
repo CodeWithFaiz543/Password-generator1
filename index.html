@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <div class="generator">
+            <input type="text" id="password" placeholder="Your Password" readonly>
+            <button id="copyBtn" onclick="copyPassword()">Copy</button>
+            <button onclick="generatePassword()">Generate</button>
+        </div>
+        <div class="options">
+            <label for="length">Password Length:</label>
+            <div class="slider-container">
+                <input type="range" id="length" min="6" max="20" value="12" oninput="updateLengthValue(this.value)">
+                <span id="lengthValue">12</span>
+            </div>
+            <div class="toggles">
+                <div class="toggle-option">
+                    <span>Uppercase</span>
+                    <label class="switch">
+                        <input type="checkbox" id="includeUpper" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-option">
+                    <span>Lowercase</span>
+                    <label class="switch">
+                        <input type="checkbox" id="includeLower" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-option">
+                    <span>Numbers</span>
+                    <label class="switch">
+                        <input type="checkbox" id="includeNumbers" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <div class="toggle-option">
+                    <span>Symbols</span>
+                    <label class="switch">
+                        <input type="checkbox" id="includeSymbols">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
